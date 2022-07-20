@@ -8,7 +8,7 @@ bundle config path vendor/bundle
 bundle install --jobs 4 --retry 3
 bundle list | grep "jekyll ("
 echo '👍 BUNDLE INSTALLED—BUILDING THE SITE'
-bundle exec jekyll build
+JEKYLL_ENV=production bundle exec jekyll build
 echo '👍 THE SITE IS BUILT—PUSHING IT BACK TO GITHUB-PAGES'
 cd build
 remote_repo="https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" && \
